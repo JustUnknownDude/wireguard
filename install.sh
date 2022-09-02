@@ -1,4 +1,4 @@
-apt update
+apt update > /dev/null 2>&1
 apt install -y docker.io docker-compose
 mkdir -p ~/wireguard/config
 cat <<EOF > ~/wireguard/docker-compose.yml
