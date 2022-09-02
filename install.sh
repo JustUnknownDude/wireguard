@@ -32,5 +32,6 @@ services:
 EOF
  cd ~/wireguard
  docker-compose up -d
+ sleep 5
  docker exec -it wireguard /app/show-peer 1
 
