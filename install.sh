@@ -1,7 +1,7 @@
 apt update
 apt install docker.io docker-compose
 mkdir -p ~/wireguard/config
-cat > ~/wireguard/docker-compose.yml <<EOF
+cat <<EOF > ~/wireguard/docker-compose.yml
 ---
 version: "2.1"
 services:
@@ -29,7 +29,8 @@ services:
     sysctls:
       - net.ipv4.conf.all.src_valid_mark=1
     restart: unless-stopped
- EOF
+EOF
  cd ~/wireguard
  docker-compose up -d
  docker exec -it wireguard /app/show-peer 1
+
